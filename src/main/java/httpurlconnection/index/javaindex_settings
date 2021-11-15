@@ -1,0 +1,12 @@
+"properties" : {
+                "totalMem" : {"type" : "float"},
+                "usedMem" : {"type" : "float"},
+                "freeMem" : {"type" : "float"},
+                "event_time" : {
+                    "type" : "date",
+                    "format" : "yyyy-MM-dd HH:mm:ss||yyyy/MM/dd HH:mm:ss||epoch_millis"
+                    }
+            }
+        }
+    }
+}

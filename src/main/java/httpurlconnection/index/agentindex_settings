@@ -1,0 +1,19 @@
+"properties" : {
+                "hostname" : {"type" : "keyword"},
+                "ip" : {"type" : "keyword"},
+                "cpu" : {"type" : "float"},
+                "memory" : {"type" : "float"},
+                "disk" : {"type" : "float"},
+                "event_time" : {
+                    "type" : "date",
+                    "format" : "yyyy-MM-dd HH:mm:ss||yyyy/MM/dd HH:mm:ss||epoch_millis"
+                    },
+                "processes" : {
+                    "name" : {"type" : "text"},
+                    "pid" : {"type" : "text"},
+                    "usedMem" : {"type" : "text"}
+                }
+            }
+         }
+    }
+}
