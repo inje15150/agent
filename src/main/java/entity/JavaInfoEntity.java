@@ -2,8 +2,6 @@ package entity;
 
 import resource.ResourceExtraction;
 
-import java.io.Serializable;
-
 public class JavaInfoEntity {
 
     private float totalMem;

@@ -10,6 +10,9 @@ import resource.ResourceExtraction;
 
 import java.io.IOException;
 import java.net.Socket;
+import java.net.UnknownHostException;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class Client {
 
@@ -24,9 +27,6 @@ public class Client {
     private final static String SERVER_IP = "192.168.91.166";
     private static int retryCount = 0;
 
-//    public final static String AGENT_SETTINGS_PATH = "C:\\Users\\joseph\\IdeaProjects\\resource\\src\\main\\java\\httpurlconnection\\index\\agentindex_settings";
-//    public final static String JAVA_SETTINGS_PATH = "C:\\Users\\joseph\\IdeaProjects\\resource\\src\\main\\java\\httpurlconnection\\index\\javaindex_settings";
-
     public static void main(String[] args) {
         Socket socket = null;
         ResourceExtraction resource = new ResourceExtraction();
@@ -36,6 +36,8 @@ public class Client {
                 socket = new Socket(SERVER_IP, SOCKET_PORT);
 
                 while (true) {
+
+                    long start = System.currentTimeMillis();
                     DataSendAndReceive send = new DataSendAndReceive(socket);
                     AgentInfoEntity agentInfoEntity = new AgentInfoEntity(resource);
                     JavaInfoEntity javaInfoEntity = new JavaInfoEntity(resource);
@@ -49,8 +51,10 @@ public class Client {
                     send.send(key, agentInfoToJson, javaInfoToJson);
                     retryCount = 0;
 
+                    long end = System.currentTimeMillis();
+                    long diffTime = end - start;
                     //noinspection BusyWait
-                    Thread.sleep(59520);
+                    Thread.sleep(60000 - diffTime);
                 }
             } catch (InterruptedException e) {
                 log.error(e.getMessage());

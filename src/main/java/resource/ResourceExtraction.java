@@ -51,8 +51,8 @@ public class ResourceExtraction {
     public float getCpu() {
         double systemCpuLoad = osBean.getSystemCpuLoad();
         float floatSystemCpuLoad = (float) (systemCpuLoad * 100);
-        return floatSystemCpuLoad;
 
+        return (float) Math.round(floatSystemCpuLoad * 100) / 100;
     }
 
     /** memory */
@@ -61,7 +61,9 @@ public class ResourceExtraction {
         float freePhysicalMemorySize = (float) osBean.getFreePhysicalMemorySize();
         float usedMemSize = totalPhysicalMemorySize - freePhysicalMemorySize;
 
-        return (usedMemSize / totalPhysicalMemorySize) * 100;
+        float result = (usedMemSize / totalPhysicalMemorySize) * 100;
+
+        return (float) Math.round(result * 100) / 100;
     }
 
     /** disk */
@@ -71,7 +73,7 @@ public class ResourceExtraction {
         float freeSpace = (float) file.getFreeSpace();
         float usedSpace = totalSpace - freeSpace;
 
-        return (usedSpace / totalSpace) * 100;
+        return (float) Math.round(((usedSpace / totalSpace) * 100) * 100) / 100;
     }
 
     /** process info */
