@@ -21,6 +21,7 @@ import static org.elasticsearch.common.xcontent.XContentFactory.jsonBuilder;
 
 public class AgentInfoIndexCreate {
 
+//    private final static Logger log = LoggerFactory.getLogger(AgentInfoIndexCreate.class);
     static final Logger log = LogManager.getLogger(AgentInfoIndexCreate.class);
     private RestHighLevelClient highLevelClient = null;
 

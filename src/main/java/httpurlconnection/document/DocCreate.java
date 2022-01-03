@@ -4,6 +4,7 @@ import client.Client;
 import com.google.gson.Gson;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -16,6 +17,7 @@ import java.nio.charset.StandardCharsets;
 
 public class DocCreate<T> {
 
+//    private final static Logger log = LoggerFactory.getLogger(DocCreate.class);
     static final Logger log = LogManager.getLogger(DocCreate.class);
 
     public void documentCreate(String indexName, String typeName, T entity) {

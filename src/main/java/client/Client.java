@@ -4,8 +4,10 @@ import com.google.gson.Gson;
 import entity.AgentInfoEntity;
 import entity.JavaInfoEntity;
 import entity.TotalData;
+import org.apache.commons.logging.LogFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.slf4j.LoggerFactory;
 import resource.ResourceExtraction;
 
 import java.io.IOException;
@@ -16,7 +18,8 @@ import java.util.TimerTask;
 
 public class Client {
 
-    static Logger log = LogManager.getLogger(Client.class);
+//    private static final org.slf4j.Logger log = LoggerFactory.getLogger(Client.class);
+    private static Logger log = LogManager.getLogger(Client.class);
     public final static int PORT = 9200;
     public final static int SOCKET_PORT = 8080;
     public final static String URL = "http://192.168.60.80:" + PORT + "/";
@@ -26,6 +29,9 @@ public class Client {
     public static Gson gson = new Gson();
     private final static String SERVER_IP = "192.168.91.166";
     private static int retryCount = 0;
+
+
+
 
     public static void main(String[] args) {
         Socket socket = null;
@@ -42,7 +48,7 @@ public class Client {
                     AgentInfoEntity agentInfoEntity = new AgentInfoEntity(resource);
                     JavaInfoEntity javaInfoEntity = new JavaInfoEntity(resource);
 
-                    String key = createKey(resource);
+                    String key = createKey(agentInfoEntity);
                     String agentInfoToJson = entityToJson(agentInfoEntity);
                     String javaInfoToJson = entityToJson(javaInfoEntity);
 
@@ -73,8 +79,8 @@ public class Client {
         }
     }
 
-    public static String createKey(ResourceExtraction resource) throws IOException {
-        return resource.getIp() + keyRule + resource.getGateway() + keyRule + resource.getMacAddress();
+    public static String createKey(AgentInfoEntity agentInfo) throws IOException {
+        return agentInfo.getIp() + keyRule + agentInfo.getGateway() + keyRule + agentInfo.getMac_address();
 //        return "dsadsadasdasd";
     }
 

@@ -4,16 +4,17 @@ import client.Client;
 import httpurlconnection.index.IndexCreate;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpPut;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.util.EntityUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class CreateIndex {
 
+//    private final static Logger log = LoggerFactory.getLogger(CreateIndex.class);
     static final Logger log = LogManager.getLogger(CreateIndex.class);
 
     public void createIndex(String indexName, String typeName, String path, int shard, int replica) {

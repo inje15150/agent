@@ -19,6 +19,7 @@ import java.util.Date;
 
 public class InsertThread extends Thread {
 
+//    private final static Logger log = LoggerFactory.getLogger(InsertThread.class);
     static final Logger log = LogManager.getLogger(InsertThread.class);
 
     @Override
@@ -33,38 +34,6 @@ public class InsertThread extends Thread {
 
                 AgentInfoEntity agentInfoEntity = new AgentInfoEntity(resource);
                 JavaInfoEntity javaInfoEntity = new JavaInfoEntity(resource);
-
-                /** httpUrlConnection */
-
-//                // Index create
-//                IndexCreate indexCreate = new IndexCreate();
-//                indexCreate.indexCreate(Client.AGENT_INFO_INDEX, typeName, Client.AGENT_SETTINGS_PATH, 5, 1); // agent_info index mapping create
-//                indexCreate.indexCreate(Client.JAVA_INFO_INDEX, typeName, Client.JAVA_SETTINGS_PATH, 5, 1); // java_info index mapping create
-//
-//                // Document create
-//                DocCreate docCreate = new DocCreate();
-//                docCreate.documentCreate(Client.AGENT_INFO_INDEX, typeName, agentInfoEntity);
-//                docCreate.documentCreate(Client.JAVA_INFO_INDEX, typeName, javaInfoEntity);
-
-
-
-                /** httpClient */
-
-//                // Index create
-//                CreateIndex indexCreate = new CreateIndex();
-//                indexCreate.createIndex(Client.AGENT_INFO_INDEX, typeName, Client.AGENT_SETTINGS_PATH, 5, 1);
-//                indexCreate.createIndex(Client.JAVA_INFO_INDEX, typeName, Client.JAVA_SETTINGS_PATH, 5, 1);
-//
-//                // Document create
-//                CreateDocument createDocument = new CreateDocument();
-//
-//                createDocument.createDocument(Client.AGENT_INFO_INDEX, typeName, agentInfoEntity);
-//                createDocument.createDocument(Client.JAVA_INFO_INDEX, typeName, javaInfoEntity);
-
-
-
-
-                /** RestHighLevelClient */
 
                 // 인덱스 생성
                 AgentInfoIndexCreate agentInfoIndexCreate = new AgentInfoIndexCreate();

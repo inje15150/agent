@@ -33,4 +33,16 @@ public class AgentInfoEntity {
         this.gateway = resourceExtraction.getGateway();
         this.interface_name = resourceExtraction.getInterface();
      }
+
+    public String getIp() {
+        return ip;
+    }
+
+    public String getGateway() {
+        return gateway;
+    }
+
+    public String getMac_address() {
+        return mac_address;
+    }
 }

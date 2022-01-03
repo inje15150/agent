@@ -1,5 +1,6 @@
 package client;
 
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -11,7 +12,8 @@ import java.net.Socket;
 
 public class DataSendAndReceive {
 
-    static Logger log = LogManager.getLogger(DataSendAndReceive.class);
+    //    private final static Logger log = LoggerFactory.getLogger(DataSendAndReceive.class);
+    private final static Logger log = LogManager.getLogger(DataSendAndReceive.class);
     private Socket socket;
     private BufferedReader reader;
     private PrintWriter writer;

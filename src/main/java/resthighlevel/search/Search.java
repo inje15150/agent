@@ -5,24 +5,20 @@ import org.apache.logging.log4j.Logger;
 import org.elasticsearch.action.search.SearchRequest;
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.client.RequestOptions;
-import org.elasticsearch.client.ResponseException;
 import org.elasticsearch.client.RestHighLevelClient;
-import org.elasticsearch.index.query.QueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
-import org.elasticsearch.search.SearchHit;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
 import resthighlevel.indexcreate.AgentInfoIndexCreate;
 
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.stream.Stream;
 
 public class Search {
 
+//    private final static Logger log = LoggerFactory.getLogger(Search.class);
     static final Logger log = LogManager.getLogger(Search.class);
     SearchRequest searchRequest = null;
     AgentInfoIndexCreate create = new AgentInfoIndexCreate();

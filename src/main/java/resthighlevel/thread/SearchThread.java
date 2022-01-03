@@ -11,6 +11,7 @@ import java.util.Date;
 
 public class SearchThread extends Thread {
 
+//    private final static Logger log = LoggerFactory.getLogger(SearchThread.class);
     static final Logger log = LogManager.getLogger(SearchThread.class);
 
     @Override

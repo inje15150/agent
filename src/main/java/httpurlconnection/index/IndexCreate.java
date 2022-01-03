@@ -3,6 +3,7 @@ package httpurlconnection.index;
 import client.Client;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.*;
 import java.net.HttpURLConnection;
@@ -13,6 +14,7 @@ import java.nio.charset.StandardCharsets;
 public class IndexCreate {
 
     private BufferedReader reader = null;
+//    private final static Logger log = LoggerFactory.getLogger(IndexCreate.class);
     static final Logger log = LogManager.getLogger(IndexCreate.class);
 
     /** 인덱스 생성 */

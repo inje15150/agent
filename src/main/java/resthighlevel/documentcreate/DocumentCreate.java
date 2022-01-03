@@ -8,6 +8,7 @@ import org.elasticsearch.action.index.IndexResponse;
 import org.elasticsearch.client.RequestOptions;
 import org.elasticsearch.client.RestHighLevelClient;
 import org.elasticsearch.common.xcontent.XContentType;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.util.Random;
@@ -15,6 +16,7 @@ import java.util.UUID;
 
 public class DocumentCreate<T> {
 
+//    private final static Logger log = LoggerFactory.getLogger(DocumentCreate.class);
     static final Logger log = LogManager.getLogger(DocumentCreate.class);
     private Gson gson = new Gson();
     private Random rd = new Random();

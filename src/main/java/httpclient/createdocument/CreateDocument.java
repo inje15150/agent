@@ -16,6 +16,7 @@ import org.apache.logging.log4j.Logger;
 import java.io.IOException;
 
 public class CreateDocument<T> {
+//    private final static Logger log = LoggerFactory.getLogger(CreateDocument.class);
     static final Logger log = LogManager.getLogger(CreateDocument.class);
     Gson gson = new Gson();
 
